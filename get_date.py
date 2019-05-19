@@ -9,7 +9,6 @@ def getData(time):
     year, month, day, hour = time.strftime("%Y,%m,%d,%H").split(',')
     return (year, month, day, hour)
 
-
 def GetTime(today):
     global next_date
     t_hours = next_date.hour + next_date.minute / 60. + next_date.second / 3600.
@@ -19,10 +18,10 @@ def GetTime(today):
         next_date = today + timedelta(days=-1, hours=-(t_hours - t_hour*6))
     else:
         next_date = next_date + timedelta(hours=-(6))
-        #print(next_date)
     return getData(next_date)
+
 #
-# WOrk with file 
+# Work with file 
 #
 
 script_path = os.path.abspath(__file__) # i.e. /path/to/dir/foobar.py
